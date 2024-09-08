@@ -2,27 +2,28 @@
   margin: 0px;
   padding: 0px;
 }
-.container {
+.modal-container {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.main-box {
+.modal-main-box {
   width: 85.6%;
   height: 84.4%;
   display: flex;
   flex-direction: column;
+  opacity: 0.25;
 }
-.nav {
+.modal-nav {
   height: 55px;
   display: flex;
   justify-content: space-between;
   padding-bottom: 28px;
   border-bottom: #000 solid 4px;
 }
-.nav-name {
+.modal-nav-name {
   height: 46.373px;
   flex-shrink: 0;
   color: #000;
@@ -32,7 +33,7 @@
   font-weight: 800;
   line-height: normal;
 }
-.nav-select {
+.modal-nav-select {
   display: flex;
 
   width: 245.816px;
@@ -53,19 +54,19 @@
   font-weight: 600;
   line-height: normal;
 }
-.product-info-table {
+.modal-product-info-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 260px;
 }
 
-.product-info-table th {
+.modal-product-info-table th {
   font-weight: bold;
   text-align: left;
   padding: 10px;
   padding-right: 74px;
 }
-.product-name-header {
+.modal-product-name-header {
   text-align: left;
   color: #000;
   font-family: Pretendard;
@@ -75,7 +76,7 @@
   line-height: normal;
 }
 
-.product-price-header {
+.modal-product-price-header {
   text-align: right;
   padding-left: 200px;
   color: #000;
@@ -87,7 +88,7 @@
   line-height: normal;
 }
 
-.product-num-header {
+.modal-product-num-header {
   text-align: right;
   padding-right: 100px;
   color: #000;
@@ -99,7 +100,7 @@
   line-height: normal;
 }
 
-.product-price {
+.modal-product-price {
   text-align: right;
   padding-left: 110px;
   color: #000;
@@ -110,7 +111,7 @@
   font-weight: 400;
   line-height: normal;
 }
-.product-num {
+.modal-product-num {
   text-align: right;
   padding-left: 170px;
   padding-right: 20px;
@@ -122,14 +123,14 @@
   font-weight: 400;
   line-height: normal;
 }
-.product-sort {
+.modal-product-sort {
   width: 1160px;
   display: flex;
   justify-content: space-between;
   margin-top: 14px;
 }
 
-.product-plus {
+.modal-product-plus {
   display: flex;
   width: 47px;
   height: 39px;
@@ -149,7 +150,7 @@
   font-weight: 600;
   line-height: normal;
 }
-.product-minus {
+.modal-product-minus {
   display: flex;
   width: 47px;
   height: 39px;
@@ -169,13 +170,13 @@
   font-weight: 600;
   line-height: normal;
 }
-.product-plus-minus {
+.modal-product-plus-minus {
   display: flex;
   gap: 16px;
   padding-left: 36px;
   padding-bottom: 4px;
 }
-.product-name {
+.modal-product-name {
   width: 740px;
   padding: 10px;
   color: #000;
@@ -191,13 +192,13 @@ tbody {
 thead {
   width: 1200px;
 }
-.product-sum {
+.modal-product-sum {
   display: flex;
   justify-content: space-between;
   border-top: #000 solid 4px;
   padding-top: 16px;
 }
-.sum-price-num {
+.modal-sum-price-num {
   color: #000;
   font-family: Pretendard;
   font-size: 30px;
@@ -206,7 +207,7 @@ thead {
   line-height: normal;
   padding: 10px;
 }
-.sum-num {
+.modal-sum-num {
   text-align: right;
   padding-left: 16px;
   padding-right: 16px;
@@ -218,7 +219,7 @@ thead {
   font-weight: 400;
   line-height: normal;
 }
-.sum-price {
+.modal-sum-price {
   text-align: right;
   padding-left: 110px;
   padding-right: 138px;
@@ -230,12 +231,12 @@ thead {
   font-weight: 400;
   line-height: normal;
 }
-.add-button {
+.modal-add-button {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
 }
-.event-product {
+.modal-event-product {
   display: flex;
   width: 158px;
   height: 55px;
@@ -255,7 +256,7 @@ thead {
   font-weight: 600;
   line-height: normal;
 }
-.all-delete {
+.modal-all-delete {
   display: flex;
   width: 185px;
   height: 55px;
@@ -275,7 +276,7 @@ thead {
   font-weight: 600;
   line-height: normal;
 }
-.go-first {
+.modal-go-first {
   display: flex;
   width: 185px;
   height: 55px;
@@ -295,7 +296,7 @@ thead {
   font-weight: 600;
   line-height: normal;
 }
-.calculate {
+.modal-calculate {
   display: inline-flex;
   width: 188px;
   height: 53.136px;

@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import "./App.css";
+import Modal from "./Modal";
 
 function App() {
   const [count, setCount] = useState(1);
+  const [count2, setCount2] = useState(2);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div className="container">
       <div className="main-box">
@@ -23,25 +31,62 @@ function App() {
           <tbody>
             <tr>
               <td className="product-name">슈퍼콘 민트초코</td>
-              <td className="product-num">1</td>
-              <td className="product-price">1400</td>
+              <td className="product-num">{count}</td>
+              <td className="product-price">{1400 * count}</td>
               <td className="product-plus-minus">
-                <button className="product-plus">+</button>
-                <button className="product-minus">-</button>
+                <button
+                  className="product-plus"
+                  onClick={() => setCount(count + 1)}
+                >
+                  +
+                </button>
+                <button
+                  className="product-minus"
+                  onClick={() => count > 1 && setCount(count - 1)}
+                >
+                  -
+                </button>
               </td>
             </tr>
             <tr>
               <td className="product-name">꼬미볼 복숭아맛</td>
-              <td className="product-num">2</td>
-              <td className="product-price">1200</td>
+              <td className="product-num">{count2}</td>
+              <td className="product-price">{600 * count2}</td>
               <td className="product-plus-minus">
-                <button className="product-plus">+</button>
-                <button className="product-minus">-</button>
+                <button
+                  className="product-plus"
+                  onClick={() => setCount2(count2 + 1)}
+                >
+                  +
+                </button>
+                <button
+                  className="product-minus"
+                  onClick={() => count2 > 1 && setCount2(count2 - 1)}
+                >
+                  -
+                </button>
               </td>
             </tr>
           </tbody>
         </table>
+        <div className="product-sum">
+          <span className="sum-price-num">총 가격 및 합계</span>
+          <div className="product-num-price">
+            <span className="sum-num">{count + count2}</span>
+            <span className="sum-price">{1400 * count + 600 * count2}</span>
+          </div>
+        </div>
+        <div className="add-button">
+          <button className="event-product">행사상품</button>
+          <button className="all-delete">전체삭제</button>
+          <button className="go-first">처음으로</button>
+          <button className="calculate" onClick={toggleModal}>
+            계산하기
+          </button>
+        </div>
       </div>
+      {/* Modal 컴포넌트에 props로 count와 count2를 전달 */}
+      {isModalOpen && <Modal count={count} count2={count2} />}
     </div>
   );
 }
