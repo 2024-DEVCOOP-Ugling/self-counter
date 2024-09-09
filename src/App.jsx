@@ -6,7 +6,6 @@ function App() {
   const [count, setCount] = useState(1);
   const [count2, setCount2] = useState(2);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
@@ -22,10 +21,10 @@ function App() {
           <thead>
             <tr className="product-sort">
               <th className="product-name-header">상품이름</th>
-              <div className="product-num-price">
+              <th className="product-num-price">
                 <th className="product-num-header">수량</th>
                 <th className="product-price-header">상품 가격</th>
-              </div>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -85,7 +84,6 @@ function App() {
           </button>
         </div>
       </div>
-      {/* Modal 컴포넌트에 props로 count와 count2를 전달 */}
       {isModalOpen && <Modal count={count} count2={count2} />}
     </div>
   );
