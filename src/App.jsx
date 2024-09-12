@@ -1,47 +1,55 @@
+// src/App.jsx
 import React, { useState } from "react";
-import "./App.css";
 import Modal from "./Modal";
+import * as S from "./AppStyle"; // Styled-components import
 import InfoProduct from "./component/product-info";
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+  }
+`;
 
 function App() {
   const [count, setCount] = useState(1);
   const [count2, setCount2] = useState(2);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   return (
-    <div className="container">
-      <div className="main-box">
-        <div className="nav">
-          <div className="nav-name">박현준 | 잔액 : 20000원</div>
-          <button className="nav-select">상품선택</button>
-        </div>
-        <InfoProduct
-          count={count}
-          count2={count2}
-          setCount={setCount}
-          setCount2={setCount2}
-        />
-        <div className="product-sum">
-          <span className="sum-price-num">총 가격 및 합계</span>
-          <div className="product-num-price">
-            <span className="sum-num">{count + count2}</span>
-            <span className="sum-price">{1400 * count + 600 * count2}</span>
-          </div>
-        </div>
-        <div className="add-button">
-          <button className="event-product">행사상품</button>
-          <button className="all-delete">전체삭제</button>
-          <button className="go-first">처음으로</button>
-          <button className="calculate" onClick={toggleModal}>
-            계산하기
-          </button>
-        </div>
-      </div>
-      {isModalOpen && <Modal count={count} count2={count2} />}
-    </div>
+    <>
+      <GlobalStyle />
+      <S.Container>
+        <S.MainBox>
+          <S.Nav>
+            <S.NavName>박현준 | 잔액 : 20000원</S.NavName>
+            <S.NavSelect>상품선택</S.NavSelect>
+          </S.Nav>
+          <InfoProduct
+            count={count}
+            count2={count2}
+            setCount={setCount}
+            setCount2={setCount2}
+          />
+          <S.ProductSum>
+            <S.SumPriceNum>총 가격 및 합계</S.SumPriceNum>
+            <div>
+              <S.SumNum>{count + count2}</S.SumNum>
+              <S.SumPrice>{1400 * count + 600 * count2}</S.SumPrice>
+            </div>
+          </S.ProductSum>
+          <S.AddButton>
+            <S.EventProudct>행사상품</S.EventProudct>
+            <S.AllDelete>전체삭제</S.AllDelete>
+            <S.GoFirst>처음으로</S.GoFirst>
+            <S.Calculate onClick={toggleModal}>계산하기</S.Calculate>
+          </S.AddButton>
+        </S.MainBox>
+        {isModalOpen && <Modal count={count} count2={count2} />}
+      </S.Container>
+    </>
   );
 }
 
