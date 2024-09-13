@@ -1,7 +1,7 @@
 // src/App.jsx
 import React, { useState } from "react";
 import Modal from "./Modal";
-import * as S from "./AppStyle"; // Styled-components import
+import * as S from "./AppStyle";
 import InfoProduct from "./component/product-info";
 import { createGlobalStyle } from "styled-components";
 

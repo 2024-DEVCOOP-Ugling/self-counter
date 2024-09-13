@@ -85,17 +85,9 @@ export const SumNum = styled.span`
   line-height: normal;
 `;
 
-export const SumPrice = styled.span`
-  text-align: right;
+export const SumPrice = styled(SumNum)`
   padding-left: 110px;
   padding-right: 138px;
-  color: #000;
-  text-align: right;
-  font-family: Pretendard;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 `;
 
 export const AddButton = styled.div`
@@ -125,65 +117,8 @@ export const EventProudct = styled.button`
   line-height: normal;
 `;
 
-export const AllDelete = styled.button`
-  display: flex;
-  width: 185px;
-  height: 55px;
-  padding: 10px 0px 10px 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 30px;
-  background: #ffc20c;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  color: #000;
-  text-align: center;
-  font-family: Pretendard;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-`;
+export const AllDelete = styled(EventProudct)``;
 
-export const GoFirst = styled.button`
-  display: flex;
-  width: 185px;
-  height: 55px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 30px;
-  background: #ffc20c;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  color: #000;
-  text-align: center;
-  font-family: Pretendard;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-`;
+export const GoFirst = styled(EventProudct)``;
 
-export const Calculate = styled.button`
-  display: inline-flex;
-  width: 188px;
-  height: 53.136px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 30px;
-  background: #ffc20c;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  color: #000;
-  text-align: center;
-  font-family: Pretendard;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-`;
+export const Calculate = styled(EventProudct)``;

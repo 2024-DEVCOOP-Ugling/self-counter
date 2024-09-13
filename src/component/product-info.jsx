@@ -1,60 +1,61 @@
 import React from "react";
-import "./product-info.css";
+import { createGlobalStyle } from "styled-components";
+import * as S from "./product-info-style";
 
+const GlobalStyle = createGlobalStyle`
+tbody {
+  display: block;
+}
+thead {
+  width: 1200px;
+}
+
+`;
 const InfoProduct = ({ count, count2, setCount, setCount2 }) => {
   return (
     <>
-      <table className="product-info-table">
+      <GlobalStyle />
+      <S.ProductInfoTable>
         <thead>
-          <tr className="product-sort">
-            <th className="product-name-header">상품이름</th>
-            <th className="product-num-price">
-              <th className="product-num-header">수량</th>
-              <th className="product-price-header">상품 가격</th>
+          <S.ProductSort>
+            <S.ProductNameHeader>상품이름</S.ProductNameHeader>
+            <th>
+              <S.ProductNumHeader>수량</S.ProductNumHeader>
+              <S.ProductPriceHeader>상품 가격</S.ProductPriceHeader>
             </th>
-          </tr>
+          </S.ProductSort>
         </thead>
         <tbody>
           <tr>
-            <td className="product-name">슈퍼콘 민트초코</td>
-            <td className="product-num">{count}</td>
-            <td className="product-price">{1400 * count}</td>
-            <td className="product-plus-minus">
-              <button
-                className="product-plus"
-                onClick={() => setCount(count + 1)}
-              >
+            <S.ProductName>슈퍼콘 민트초코</S.ProductName>
+            <S.ProductNum>{count}</S.ProductNum>
+            <S.ProductPrice>{1400 * count}</S.ProductPrice>
+            <S.ProductPlusMinus>
+              <S.ProductPlus onClick={() => setCount(count + 1)}>
                 +
-              </button>
-              <button
-                className="product-minus"
-                onClick={() => count > 1 && setCount(count - 1)}
-              >
+              </S.ProductPlus>
+              <S.ProductMinus onClick={() => count > 1 && setCount(count - 1)}>
                 -
-              </button>
-            </td>
+              </S.ProductMinus>
+            </S.ProductPlusMinus>
           </tr>
           <tr>
-            <td className="product-name">꼬미볼 복숭아맛</td>
-            <td className="product-num">{count2}</td>
-            <td className="product-price">{600 * count2}</td>
-            <td className="product-plus-minus">
-              <button
-                className="product-plus"
-                onClick={() => setCount2(count2 + 1)}
-              >
+            <S.ProductName>꼬미볼 복숭아맛</S.ProductName>
+            <S.ProductNum>{count2}</S.ProductNum>
+            <S.ProductPrice>{600 * count2}</S.ProductPrice>
+            <S.ProductPlusMinus>
+              <S.ProductPlus onClick={() => setCount2(count2 + 1)}>
                 +
-              </button>
-              <button
-                className="product-minus"
+              </S.ProductPlus>
+              <S.ProductMinus
                 onClick={() => count2 > 1 && setCount2(count2 - 1)}
               >
                 -
-              </button>
-            </td>
+              </S.ProductMinus>
+            </S.ProductPlusMinus>
           </tr>
         </tbody>
-      </table>
+      </S.ProductInfoTable>
     </>
   );
 };
